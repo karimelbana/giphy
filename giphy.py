@@ -33,7 +33,7 @@ query = st.text_input("Search a GIF")
 params = {"api_key": st.secrets["api_key"], "q": query, "Limit": 10}
 response = requests.get(url=url, params=params).json()
 #st.write(response)
-gif_url = response["data"][np.random.randint(0, 10) ]["embed_url"]
+gif_url = response["data"][np.random.randint(0, 5) ]["embed_url"]
 st.write(gif_url)
 st.markdown(f'<iframe src="{gif_url}" width="480" height="240">', unsafe_allow_html=True)
 st.image(gif_url, width=480)
